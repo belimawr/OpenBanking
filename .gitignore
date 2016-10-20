@@ -106,3 +106,7 @@ ENV/
 .idea/
 .idea/vcs.xml
 .DS_Store
+
+.settings
+JAVA/OpenBankingTransfer/.settings/
+

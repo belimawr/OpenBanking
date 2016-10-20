@@ -4,6 +4,7 @@ public enum CONFIG {
 
 	URL_OAUTH("https://sb-autenticacao-api.original.com.br/OriginalConnect"),
 	URL_ACCESS_TOKEN("https://sb-autenticacao-api.original.com.br/OriginalConnect/AccessTokenController"),
+
 	URL_CALLBACK("http://localhost:9090/OpenBankingTransfer/OAuthController"),
 
 	DEV_APP_KEY(""),
