@@ -32,16 +32,15 @@ public class TransferConfirmServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			String url = CONFIG.URL_TRANSFER.getValue();
-			Builder accept = MyRestClient.createClientWithAuthentication(url);
 			HttpSession session = request.getSession(false);
-
+			JSONObject jsonTransfer = (JSONObject) session.getAttribute("TransferObject");
 			JSONObject jsonToken = JsonUtil.json(request);
 			int token = jsonToken.getInt("token");
-			accept = accept.header("security_request", token);
 
-			JSONObject jsonTransfer = (JSONObject) session.getAttribute("TransferObject");
-			ClientResponse res = accept.post(ClientResponse.class, jsonTransfer);
+			String url = CONFIG.URL_TRANSFER.getValue();
+			Builder accept = MyRestClient.createClientWithAuthentication(url);
+			accept = accept.header("security-response", token);
+			ClientResponse res = accept.put(ClientResponse.class, jsonTransfer);
 			String resp = res.getEntity(String.class);
 			JSONObject entity = new JSONObject(resp);
 			System.out.println(entity);

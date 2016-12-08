@@ -71,7 +71,6 @@ public class OAuthController extends HttpServlet {
 		try {
 			StringBuilder r = new StringBuilder();
 			r.append("?callback_url=" + URLEncoder.encode(CONFIG.URL_CALLBACK.getValue(), "UTF-8"));
-			r.append("&scopes=account,transfer");
 			r.append("&developer_key=" + CONFIG.DEV_APP_KEY.getValue());
 			response.sendRedirect(CONFIG.URL_OAUTH.getValue() + r.toString());
 		} catch (Exception e) {

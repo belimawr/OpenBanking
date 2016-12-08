@@ -137,6 +137,8 @@ jQuery(document).ready(function() {
                       $("#share_recipient_name").html(responseJSON["recipient_name"])
                       $("#share_date").html(responseJSON["date"])
                       $("#share_amount").html(responseJSON["amount"])
+                      $("#account_number").html(responseJSON["account_number"])
+
     				  parent_fieldset.fadeOut(400, function() {
     					  current_active_step.removeClass('active').addClass('activated').next().addClass('active');
     					  bar_progress(progress_line, 'right');

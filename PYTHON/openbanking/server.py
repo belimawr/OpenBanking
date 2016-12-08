@@ -10,7 +10,7 @@ def index():
 
 @route('/connect')
 def connect():
-    url = config.oauth_url.format(config.developer_key, config.scopes, config.callback_url, config.callback_id)
+    url = config.oauth_url.format(config.developer_key, config.callback_url, config.callback_id)
     return redirect(url)
 
 @route('/callback')
