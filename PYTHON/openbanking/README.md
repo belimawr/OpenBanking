@@ -14,6 +14,12 @@ Instale as dependências:
 pip install -r requirements.txt
 ```
 
+Exporte as variáveis de ambiente com as suas chaves:
+```
+export SECRET_KEY=sua_secret_key_aqui
+export DEVELOPER_KEY=sua_developer_key_aqui
+```
+
 Rode o servidor:
 ```
 python server.py
