@@ -1,7 +1,8 @@
+import os
 
 #OAuth
-developer_key = ""
-secret_key = ""
+developer_key = os.getenv('DEVELOPER_KEY')
+secret_key = os.getenv('SECRET_KEY')
 callback_url = "http://localhost:8000/callback"
 callback_id = "xyz"
 
